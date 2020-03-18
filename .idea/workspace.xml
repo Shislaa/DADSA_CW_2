@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c7b9e51-42f6-4714-a861-7365fae2dcf8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PATIENT DATA - PATIENT A1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/PATIENT DATA - PATIENT A1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PATIENT DATA - PATIENT A2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/PATIENT DATA - PATIENT A2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PATIENT DATA - PATIENT A3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/PATIENT DATA - PATIENT A3.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PATIENT DATA - PATIENT B1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/PATIENT DATA - PATIENT B1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PATIENT DATA - PATIENT B2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/PATIENT DATA - PATIENT B2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PATIENT DATA - PATIENT B3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/PATIENT DATA - PATIENT B3.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PATIENT DATA - PATIENT B4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/PATIENT DATA - PATIENT B4.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PATIENT DATA - PATIENT B5.csv" beforeDir="false" afterPath="$PROJECT_DIR$/PATIENT DATA - PATIENT B5.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PATIENT DATA - PATIENT B6.csv" beforeDir="false" afterPath="$PROJECT_DIR$/PATIENT DATA - PATIENT B6.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PATIENT DATA - PATIENT B7.csv" beforeDir="false" afterPath="$PROJECT_DIR$/PATIENT DATA - PATIENT B7.csv" afterDir="false" />
-    </list>
+    <list default="true" id="0c7b9e51-42f6-4714-a861-7365fae2dcf8" name="Default Changelist" comment="Ranking" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +79,14 @@
       <option name="presentableId" value="Default" />
       <updated>1583357698842</updated>
     </task>
+    <task id="LOCAL-00001" summary="Ranking">
+      <created>1584542966123</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584542966123</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,5 +101,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ranking" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ranking" />
   </component>
 </project>
