@@ -236,15 +236,15 @@ def main():
     ranking(PatientList)
 main()
 
-for i in range(0, PatientList.size()):
-    PAtemp = PatientList.itemAt(i)
-    if (PAtemp.getType() == "LR"):
-        LR(PAtemp,0,"LR")
-        print("////[[[[ PATIENT ", i, "]]]]")
-        print("Day     Time     Feed     GRV     Issues")
-        for i in range(0,5):
-            print(i,end = '')
-            for j in range(0,24):
-                print("      ", j,"     ",PAtemp.getFeedingStatus(i,j),"     ",PAtemp.getGRVStatus(i,j),"     ",PAtemp.getIssueStatus(i,j))
-        print("[[[[[[[ ]]]]]]]]")
+# for i in range(0, PatientList.size()):
+#     PAtemp = PatientList.itemAt(i)
+#     if (PAtemp.getType() == "LR"):
+#         LR(PAtemp,0,"LR")
+#         print("////[[[[ PATIENT ", i, "]]]]")
+#         print("Day     Time     Feed     GRV     Issues")
+#         for i in range(0,5):
+#             print(i,end = '')
+#             for j in range(0,24):
+#                 print("      ", j,"     ",PAtemp.getFeedingStatus(i,j),"     ",PAtemp.getGRVStatus(i,j),"     ",PAtemp.getIssueStatus(i,j))
+#         print("[[[[[[[ ]]]]]]]]")
 #
