@@ -3,12 +3,16 @@ import csv
 # Initalizing Patient class
 
 class Patient():
-    global feeding, grv, issue,GRV,Type,age,W,IssUpdate,DayLog,RankPoint
+    global feeding, grv, issue,GRV,Type,age,W,IssUpdate,DayLog,RankPoint,name
     def __init__(self):
         self.items = self
         self.items.feeding = [[0] * 24 for i in range(24)]
         self.items.grv = [[0] * 24 for i in range(24)]
         self.items.issue = [[0] * 24 for i in range(24)]
+    def setName(self,value):
+        self.items.name = value
+    def getName(self):
+        return self.items.name
     def setRankPoint(self,value):
         self.items.RankPoint = value
     def getRankPoint(self):
@@ -60,7 +64,10 @@ class List(Patient):
         self.items.remove(self.items[i])
     def itemAt(self,i):
         return self.items[i]
-
+    def swap(self,index,indexswap):
+        temp = self.items[index]
+        self.items[index] = self.items[indexswap]
+        self.items[indexswap] = temp
 PatientList = List()
 
 def Data():
@@ -78,7 +85,9 @@ def Data():
     for i in range(0,10):
         with open(filename.itemAt(i)) as csvfile:
             reader = csv.reader(csvfile, delimiter=',')
+            nameTemp = filename.itemAt(i)
             PA = Patient()
+            PA.setName(nameTemp[len(nameTemp) - 6] + nameTemp[len(nameTemp) - 5])
             row = int(0)
             dayrow = int(3)
             for j in reader:
@@ -183,13 +192,14 @@ def ranking(PAL):
         rankpoint = int(0)
         none = int(1)
         stopfeed = int(2)
-        refer = int(3)
+        refer = int(8)
         bns = int(0)
         bnd = int(0)
         ls = int(0)
+        ld = int(0)
         notNone = False
         for i in range(0, 5):
-            print(temp.itemAt(i), " ", end='')
+#            print(temp.itemAt(i), " ", end='')
             if temp.itemAt(i) == "NONE":
                 if notNone == True:
                     bns = 0
@@ -198,33 +208,35 @@ def ranking(PAL):
                 bns += 1
                 bnd = i * 2
                 ls = 0
+                ld = 0
                 notNone = False
             if temp.itemAt(i) == "FEEDING STOPPED":
                 notNone = True
-                rankpoint += initpoint - stopfeed - ls
+                rankpoint += initpoint - stopfeed - ls - ld
                 ls += 1
+                ld  = i*2
             if temp.itemAt(i) == "REFER TO DIETICIAN":
                 notNone = True
-                rankpoint += initpoint - refer - ls
+                rankpoint += initpoint - refer - ls - ld
                 ls += 2
+                ld = i*2
         PA.setRankPoint(rankpoint)
-        print(" RankPoint: ", rankpoint)
+#        print(" RankPoint: ", rankpoint)
 
 
+# [[[ Sorting by rankpoint ]]]
+    for i in range(PAL.size()):
 
+        # Find the minimum element in remaining
+        # unsorted array
+        min_idx = i
+        for j in range(i + 1, PAL.size()):
+            if PAL.itemAt(min_idx).getRankPoint() < PAL.itemAt(j).getRankPoint():
+                min_idx = j
 
-    # for i in range(1, len(PAL)):
-    #
-    #     key = arr[i]
-    #
-    #     # Move elements of arr[0..i-1], that are
-    #     # greater than key, to one position ahead
-    #     # of their current position
-    #     j = i - 1
-    #     while j >= 0 and key < arr[j]:
-    #         arr[j + 1] = arr[j]
-    #         j -= 1
-    #     arr[j + 1] = key
+                # Swap the found minimum element with
+        # the first element
+        PAL.swap(min_idx,i)
 
 def main():
     for i in range(0,PatientList.size()):
@@ -234,6 +246,13 @@ def main():
         else:
             LR(PA,0,"LR")
     ranking(PatientList)
+    for i in range(0,PatientList.size()):
+        daylog = PatientList.itemAt(i).getDayLog()
+        print("PATIENT ",PatientList.itemAt(i).getName(),": [ ",end ='')
+        for j in range(0,5):
+            print(daylog.itemAt(j)," ",end = '')
+        print("] RankPoint: ", PatientList.itemAt(i).getRankPoint())
+
 main()
 
 # for i in range(0, PatientList.size()):
